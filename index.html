@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoExplore SA | Everything South Africa in One Place</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a5276;
+            --primary-dark: #154360;
+            --secondary: #e74c3c;
+            --secondary-dark: #c0392b;
+            --accent: #f39c12;
+            --accent-dark: #e67e22;
+            --success: #27ae60;
+            --light: #f8f9fa;
+            --light-gray: #e9ecef;
+            --dark: #2c3e50;
+            --dark-gray: #7f8c8d;
+            --text: #34495e;
+            --text-light: #666;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow: 0 5px 20px rgba(0,0,0,0.12);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.15);
+            --radius-sm: 8px;
+            --radius: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 25px auto 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn i {
+            font-size: 1.1em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(26, 82, 118, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26, 82, 118, 0.4);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-lg {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, rgba(26, 82, 118, 0.95), rgba(44, 62, 80, 0.95));
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(26, 82, 118, 0.98);
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        /* Logo Design */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo-icon {
+            position: relative;
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-symbol {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-symbol::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            line-height: 1;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-main span {
+            color: var(--accent);
+            position: relative;
+        }
+
+        .logo-main span::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .logo-subtitle {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 2px;
+            margin-top: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 8px 0;
+            position: relative;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a i {
+            font-size: 1.1em;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 82, 118, 0.9), rgba(44, 62, 80, 0.9)), 
+                        url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, white, transparent);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 25px;
+            color: white;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 60px 0 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Search Container */
+        .search-container {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin: 60px auto 0;
+            max-width: 1000px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            z-index: 2;
+        }
+
+        .search-tabs {
+            display: flex;
+            border-bottom: 2px solid var(--light-gray);
+            margin-bottom: 30px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .search-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .search-tab {
+            padding: 15px 25px;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            position: relative;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+
+        .search-tab:hover {
+            color: var(--primary);
+        }
+
+        .search-tab.active {
+            color: var(--primary);
+        }
+
+        .search-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .search-input {
+            padding: 16px 20px;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            background: white;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 82, 118, 0.1);
+        }
+
+        .search-form button {
+            grid-column: span 1;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-form button:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--dark));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 82, 118, 0.3);
+        }
+
+        /* Quick Access */
+        .quick-access {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .access-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .access-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .access-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .access-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .access-card:hover .access-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+        }
+
+        .access-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .access-card p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            background: white;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-header {
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .category-content {
+            padding: 30px;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-count {
+            background: var(--light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Featured Section */
+        .featured-section {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="white" opacity="0.1"/></svg>');
+            background-size: cover;
+        }
+
+        .featured-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .featured-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .featured-image {
+            height: 220px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+        }
+
+        .featured-content {
+            padding: 25px;
+        }
+
+        .featured-rating {
+            color: var(--accent);
+            margin: 10px 0;
+        }
+
+        .featured-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin: 15px 0;
+        }
+
+        /* Jobs Section */
+        .jobs-section {
+            background: white;
+        }
+
+        .jobs-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .job-listings {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .job-card {
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--radius);
+            padding: 25px;
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .job-card:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
+        }
+
+        .job-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .job-meta i {
+            color: var(--primary);
+            margin-right: 5px;
+        }
+
+        .job-type {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--light);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Professionals */
+        .professionals-sidebar {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            color: white;
+        }
+
+        .professional-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .professional-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Accommodation */
+        .accommodation-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .accommodation-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 25px;
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--radius);
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .accommodation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="50" cy="50" r="40" fill="white" opacity="0.05"/></svg>');
+            background-size: cover;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%232c3e50"/></svg>');
+            background-size: cover;
+            transform: translateY(-99px);
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-column a i {
+            width: 20px;
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .newsletter {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: var(--radius);
+            margin-top: 20px;
+        }
+
+        .newsletter input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: var(--radius);
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .search-form {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .jobs-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-actions {
+                display: none;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .search-container {
+                padding: 25px;
+                margin: 40px 20px 0;
+            }
+            
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-item {
+                min-width: 120px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .access-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .btn-lg {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+            
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-symbol">G</div>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-main">Go<span>Explore</span> SA</div>
+                        <div class="logo-subtitle">EVERYTHING SOUTH AFRICA</div>
+                    </div>
+                </a>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <nav>
+                    <ul class="nav-links" id="navLinks">
+                        <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#business"><i class="fas fa-building"></i> Business</a></li>
+                        <li><a href="#jobs"><i class="fas fa-briefcase"></i> Jobs</a></li>
+                        <li><a href="#tourism"><i class="fas fa-umbrella-beach"></i> Tourism</a></li>
+                        <li><a href="#accommodation"><i class="fas fa-bed"></i> Accommodation</a></li>
+                        <li><a href="#events"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                        <li><a href="#services"><i class="fas fa-tools"></i> Services</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Sign In</button>
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Listing</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Discover Everything South Africa</h1>
+                <p>Your all-in-one platform for businesses, jobs, tourism, accommodation, skilled professionals, and local services across all 9 provinces.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="50000">0</span>
+                        <span class="stat-label">Business Listings</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="15000">0</span>
+                        <span class="stat-label">Job Opportunities</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="10000">0</span>
+                        <span class="stat-label">Skilled Professionals</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5000">0</span>
+                        <span class="stat-label">Tourism Spots</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Container -->
+    <div class="search-container animate-on-scroll">
+        <div class="search-tabs">
+            <button class="search-tab active" data-tab="everything">Everything</button>
+            <button class="search-tab" data-tab="business">Business Directory</button>
+            <button class="search-tab" data-tab="jobs">Jobs & Careers</button>
+            <button class="search-tab" data-tab="tourism">Tourism & Travel</button>
+            <button class="search-tab" data-tab="accommodation">Accommodation</button>
+            <button class="search-tab" data-tab="professionals">Skilled Professionals</button>
+        </div>
+        
+        <form class="search-form">
+            <input type="text" class="search-input" placeholder="What are you looking for?" required>
+            <select class="search-input">
+                <option>All Categories</option>
+                <option>Business Directory</option>
+                <option>Jobs & Careers</option>
+                <option>Tourism & Travel</option>
+                <option>Accommodation</option>
+                <option>Skilled Services</option>
+            </select>
+            <select class="search-input">
+                <option>All Provinces</option>
+                <option>Gauteng</option>
+                <option>Western Cape</option>
+                <option>KwaZulu-Natal</option>
+                <option>Eastern Cape</option>
+                <option>All Provinces</option>
+            </select>
+            <select class="search-input">
+                <option>All Cities</option>
+                <option>Johannesburg</option>
+                <option>Cape Town</option>
+                <option>Durban</option>
+                <option>Pretoria</option>
+                <option>Port Elizabeth</option>
+            </select>
+            <button type="submit" class="btn-secondary"><i class="fas fa-search"></i> Search</button>
+        </form>
+    </div>
+
+    <!-- Quick Access Section -->
+    <section class="section quick-access">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Everything You Need</h2>
+                <p>Access all South African resources in one place</p>
+            </div>
+            
+            <div class="access-grid">
+                <div class="access-card animate-on-scroll">
+                    <div class="access-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Business Directory</h3>
+                    <p>Find local businesses, malls, markets, and services across South Africa</p>
+                    <button class="btn btn-secondary">Explore Businesses</button>
+                </div>
+                
+                <div class="access-card animate-on-scroll">
+                    <div class="access-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Jobs & Careers</h3>
+                    <p>Find employment opportunities or hire skilled professionals</p>
+                    <button class="btn btn-secondary">Find Jobs</button>
+                </div>
+                
+                <div class="access-card animate-on-scroll">
+                    <div class="access-icon">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3>Tourism & Travel</h3>
+                    <p>Discover South Africa's beautiful destinations and activities</p>
+                    <button class="btn btn-secondary">Explore Tourism</button>
+                </div>
+                
+                <div class="access-card animate-on-scroll">
+                    <div class="access-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Accommodation</h3>
+                    <p>Find hotels, guest houses, B&Bs, and rooms to rent</p>
+                    <button class="btn btn-secondary">Find Stays</button>
+                </div>
+                
+                <div class="access-card animate-on-scroll">
+                    <div class="access-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Skilled Services</h3>
+                    <p>Find plumbers, electricians, tutors, designers, and more</p>
+                    <button class="btn btn-secondary">Find Professionals</button>
+                </div>
+                
+                <div class="access-card animate-on-scroll">
+                    <div class="access-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Events & Festivals</h3>
+                    <p>Discover local events, markets, concerts, and exhibitions</p>
+                    <button class="btn btn-secondary">View Events</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Categories -->
+    <section class="section categories-section" id="business">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Business Directory</h2>
+                <p>Find businesses, services, and suppliers across all industries</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card animate-on-scroll">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>Retail & Shopping</h3>
+                        <p>Malls, stores, boutiques, and markets</p>
+                    </div>
+                    <div class="category-content">
+                        <ul class="category-list">
+                            <li>Clothing & Fashion <span class="category-count">1,245</span></li>
+                            <li>Electronics <span class="category-count">567</span></li>
+                            <li>Supermarkets <span class="category-count">892</span></li>
+                            <li>Home & Garden <span class="category-count">734</span></li>
+                            <li>Shopping Malls <span class="category-count">45</span></li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 20px;">View All Retail</button>
+                    </div>
+                </div>
+                
+                <div class="category-card animate-on-scroll">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Food & Dining</h3>
+                        <p>Restaurants, cafes, food markets</p>
+                    </div>
+                    <div class="category-content">
+                        <ul class="category-list">
+                            <li>Restaurants <span class="category-count">2,345</span></li>
+                            <li>Cafes & Coffee Shops <span class="category-count">1,234</span></li>
+                            <li>Fast Food <span class="category-count">987</span></li>
+                            <li>Fine Dining <span class="category-count">456</span></li>
+                            <li>Food Markets <span class="category-count">123</span></li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 20px;">View All Food</button>
+                    </div>
+                </div>
+                
+                <div class="category-card animate-on-scroll">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Health & Wellness</h3>
+                        <p>Healthcare and wellness services</p>
+                    </div>
+                    <div class="category-content">
+                        <ul class="category-list">
+                            <li>Hospitals <span class="category-count">123</span></li>
+                            <li>Clinics <span class="category-count">456</span></li>
+                            <li>Pharmacies <span class="category-count">789</span></li>
+                            <li>Fitness Centers <span class="category-count">567</span></li>
+                            <li>Wellness Spas <span class="category-count">234</span></li>
+                        </ul>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 20px;">View All Health</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="section featured-section" id="tourism">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Featured Tourism & Accommodation</h2>
+                <p>Top-rated destinations and stays across South Africa</p>
+            </div>
+            
+            <div class="featured-grid">
+                <div class="featured-card animate-on-scroll">
+                    <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <div class="featured-badge">SAFARI</div>
+                    </div>
+                    <div class="featured-content">
+                        <h3>Kruger National Park</h3>
+                        <p>Experience the ultimate African safari with the Big 5</p>
+                        <div class="featured-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span style="color: var(--text-light); margin-left: 8px;">4.8 (1,247 reviews)</span>
+                        </div>
+                        <div class="featured-price">From R2,450 / night</div>
+                        <button class="btn btn-primary" style="width: 100%;">Explore Packages</button>
+                    </div>
+                </div>
+                
+                <div class="featured-card animate-on-scroll">
+                    <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <div class="featured-badge" style="background: var(--primary);">MALL</div>
+                    </div>
+                    <div class="featured-content">
+                        <h3>V&A Waterfront</h3>
+                        <p>Cape Town's premier shopping and entertainment destination</p>
+                        <div class="featured-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span style="color: var(--text-light); margin-left: 8px;">4.9 (2,134 reviews)</span>
+                        </div>
+                        <div class="featured-price">450+ Stores</div>
+                        <button class="btn btn-primary" style="width: 100%;">View Directory</button>
+                    </div>
+                </div>
+                
+                <div class="featured-card animate-on-scroll">
+                    <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <div class="featured-badge" style="background: var(--success);">GUEST HOUSE</div>
+                    </div>
+                    <div class="featured-content">
+                        <h3>Protea Guest House</h3>
+                        <p>Luxury guest house in the heart of Stellenbosch</p>
+                        <div class="featured-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span style="color: var(--text-light); margin-left: 8px;">5.0 (89 reviews)</span>
+                        </div>
+                        <div class="featured-price">From R1,200 / night</div>
+                        <button class="btn btn-primary" style="width: 100%;">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section class="section jobs-section" id="jobs">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Jobs & Skilled Professionals</h2>
+                <p>Find employment opportunities or hire qualified professionals</p>
+            </div>
+            
+            <div class="jobs-container">
+                <div class="job-listings">
+                    <h3 style="margin-bottom: 25px;">Latest Job Opportunities</h3>
+                    
+                    <div class="job-card animate-on-scroll">
+                        <div class="job-info">
+                            <h3>Senior Software Developer</h3>
+                            <p>Leading tech company in Sandton seeks experienced developer with React and Node.js skills</p>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Johannesburg</span>
+                                <span><i class="fas fa-money-bill-wave"></i> R60,000 - R80,000</span>
+                                <span><i class="fas fa-clock"></i> Full-time</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="job-type">Technology</span>
+                            <button class="btn btn-primary" style="margin-left: 15px;">Apply Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card animate-on-scroll">
+                        <div class="job-info">
+                            <h3>Marketing Manager</h3>
+                            <p>Dynamic marketing agency seeks creative manager with 5+ years experience</p>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Cape Town</span>
+                                <span><i class="fas fa-money-bill-wave"></i> R45,000 - R60,000</span>
+                                <span><i class="fas fa-clock"></i> Full-time</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="job-type">Marketing</span>
+                            <button class="btn btn-primary" style="margin-left: 15px;">Apply Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="job-card animate-on-scroll">
+                        <div class="job-info">
+                            <h3>Registered Nurse</h3>
+                            <p>Private hospital seeks qualified nurses for various departments</p>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Durban</span>
+                                <span><i class="fas fa-money-bill-wave"></i> R35,000 - R45,000</span>
+                                <span><i class="fas fa-clock"></i> Full-time</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="job-type">Healthcare</span>
+                            <button class="btn btn-primary" style="margin-left: 15px;">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="professionals-sidebar animate-on-scroll">
+                    <h3 style="margin-bottom: 25px;">Featured Professionals</h3>
+                    
+                    <div class="professional-card">
+                        <div class="professional-avatar">JW</div>
+                        <h4>James Wilson</h4>
+                        <p>Licensed Electrician</p>
+                        <div class="skills">
+                            <span class="skill-tag">Wiring</span>
+                            <span class="skill-tag">Installations</span>
+                            <span class="skill-tag">Repairs</span>
+                        </div>
+                        <button class="btn btn-accent" style="width: 100%; margin-top: 20px;">Hire Now</button>
+                    </div>
+                    
+                    <div class="professional-card">
+                        <div class="professional-avatar">SJ</div>
+                        <h4>Sarah Johnson</h4>
+                        <p>Graphic Designer</p>
+                        <div class="skills">
+                            <span class="skill-tag">Logo Design</span>
+                            <span class="skill-tag">Branding</span>
+                            <span class="skill-tag">Web Design</span>
+                        </div>
+                        <button class="btn btn-accent" style="width: 100%; margin-top: 20px;">Hire Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Ready to Explore South Africa?</h2>
+                <p>Join thousands of users who are discovering businesses, finding jobs, booking accommodation, and connecting with skilled professionals across South Africa.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-accent btn-lg"><i class="fas fa-rocket"></i> Get Started Free</button>
+                    <button class="btn btn-outline btn-lg" style="border-color: white; color: white;"><i class="fas fa-play-circle"></i> Watch Demo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-column">
+                    <a href="#" class="logo" style="justify-content: flex-start; margin-bottom: 25px;">
+                        <div class="logo-icon">
+                            <div class="logo-symbol">G</div>
+                        </div>
+                        <div class="logo-text">
+                            <div class="logo-main">Go<span>Explore</span> SA</div>
+                            <div class="logo-subtitle">EVERYTHING SOUTH AFRICA</div>
+                        </div>
+                    </a>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 20px;">
+                        Your comprehensive platform for everything South Africa - businesses, jobs, tourism, accommodation, and local services.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#business"><i class="fas fa-building"></i> Business Directory</a></li>
+                        <li><a href="#jobs"><i class="fas fa-briefcase"></i> Jobs & Careers</a></li>
+                        <li><a href="#tourism"><i class="fas fa-umbrella-beach"></i> Tourism & Travel</a></li>
+                        <li><a href="#accommodation"><i class="fas fa-bed"></i> Accommodation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>For Businesses</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-list-alt"></i> Add Your Business</a></li>
+                        <li><a href="#"><i class="fas fa-ad"></i> Advertise With Us</a></li>
+                        <li><a href="#"><i class="fas fa-chart-line"></i> Business Insights</a></li>
+                        <li><a href="#"><i class="fas fa-users"></i> B2B Networking</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@goexploresa.co.za</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +27 11 234 5678</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Johannesburg, SA</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> Help Center</a></li>
+                    </ul>
+                    
+                    <div class="newsletter">
+                        <h5>Newsletter</h5>
+                        <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin-bottom: 10px;">Stay updated with the latest in SA</p>
+                        <input type="email" placeholder="Your email address">
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 5px;">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 GoExplore SA. All rights reserved. | 
+                    <a href="#" style="color: var(--accent);">Privacy Policy</a> | 
+                    <a href="#" style="color: var(--accent);">Terms of Service</a> | 
+                    <a href="#" style="color: var(--accent);">Cookie Policy</a>
+                </p>
+                <p style="margin-top: 15px; font-size: 0.8rem;">
+                    Proudly South African 🇿🇦 | SATSA Registered | B-BBEE Compliant | POPIA Compliant
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Search Tabs
+        document.querySelectorAll('.search-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.search-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Animate on Scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        };
+
+        // Initialize on load
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Animated Statistics Counter
+        const animateCounter = (element, start, end, duration) => {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value.toLocaleString() + '+';
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
+
+        // Initialize counters when in view
+        const statElements = document.querySelectorAll('.stat-number');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const target = parseInt(element.getAttribute('data-count'));
+                    animateCounter(element, 0, target, 2000);
+                    statsObserver.unobserve(element);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statElements.forEach(element => {
+            statsObserver.observe(element);
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    // Smooth scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Form Submission
+        document.querySelector('.search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchInput = this.querySelector('.search-input').value;
+            const activeTab = document.querySelector('.search-tab.active').textContent;
+            alert(`Searching ${searchInput} in ${activeTab}...`);
+            // In real implementation, this would submit the form
+        });
+
+        // Apply Now Buttons
+        document.querySelectorAll('.job-card .btn-primary').forEach(button => {
+            button.addEventListener('click', function() {
+                const jobTitle = this.closest('.job-card').querySelector('h3').textContent;
+                alert(`Applying for: ${jobTitle}\n\nIn a real implementation, this would open an application form.`);
+            });
+        });
+
+        // Hire Now Buttons
+        document.querySelectorAll('.professional-card .btn-accent').forEach(button => {
+            button.addEventListener('click', function() {
+                const professionalName = this.closest('.professional-card').querySelector('h4').textContent;
+                const profession = this.closest('.professional-card').querySelector('p').textContent;
+                alert(`Contacting ${professionalName} - ${profession}\n\nThis would open a contact form in the real implementation.`);
+            });
+        });
+
+        // Add Listing Button
+        document.querySelector('.header-actions .btn-primary').addEventListener('click', function() {
+            alert('Opening listing form...\n\nThis would open a form to add a business/job/property listing.');
+        });
+
+        // Newsletter Subscription
+        document.querySelector('.newsletter .btn-primary').addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = this.closest('.newsletter').querySelector('input').value;
+            if (email) {
+                alert(`Thank you for subscribing with ${email}!\n\nYou will receive our newsletter soon.`);
+                this.closest('.newsletter').querySelector('input').value = '';
+            }
+        });
+
+        // Initialize animations on page load
+        animateOnScroll();
+    </script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Home & Core Pages -->
+    <url>
+        <loc>https://goexploresa.co.za/</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/about</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/contact</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/privacy-policy</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/terms-of-service</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- Business Directory Pages -->
+    <url>
+        <loc>https://goexploresa.co.za/business-directory</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/business/retail-shopping</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/business/food-dining</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/business/health-wellness</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/business/services</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/business/manufacturing</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/business/technology</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Malls & Markets -->
+    <url>
+        <loc>https://goexploresa.co.za/malls-markets</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/malls-markets/shopping-malls</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/malls-markets/farmers-markets</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/malls-markets/craft-markets</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Jobs & Careers -->
+    <url>
+        <loc>https://goexploresa.co.za/jobs</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/jobs/technology-it</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/jobs/finance-banking</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/jobs/healthcare</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/jobs/education</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/jobs/construction</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Skilled Professionals -->
+    <url>
+        <loc>https://goexploresa.co.za/professionals</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/professionals/plumbers</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/professionals/electricians</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/professionals/painters</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/professionals/consultants</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/professionals/developers</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Tourism & Travel -->
+    <url>
+        <loc>https://goexploresa.co.za/tourism</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/tourism/destinations</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/tourism/activities</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/tourism/western-cape</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/tourism/gauteng</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/tourism/kwazulu-natal</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/tourism/eastern-cape</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Accommodation -->
+    <url>
+        <loc>https://goexploresa.co.za/accommodation</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/accommodation/hotels</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/accommodation/guest-houses</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/accommodation/bed-breakfast</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/accommodation/rooms-rent</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/accommodation/lodges</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Events -->
+    <url>
+        <loc>https://goexploresa.co.za/events</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/events/festivals</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/events/markets</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/events/concerts</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/events/exhibitions</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- User Pages -->
+    <url>
+        <loc>https://goexploresa.co.za/login</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/register</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/dashboard</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/add-listing</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Help & Support -->
+    <url>
+        <loc>https://goexploresa.co.za/help</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/faq</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- City Pages (Dynamically Generated) -->
+    <!-- These would be generated from your database -->
+    <url>
+        <loc>https://goexploresa.co.za/city/johannesburg</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/city/cape-town</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/city/durban</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/city/pretoria</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/city/port-elizabeth</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/city/bloemfontein</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Province Pages -->
+    <url>
+        <loc>https://goexploresa.co.za/province/gauteng</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/province/western-cape</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/province/kwazulu-natal</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/province/eastern-cape</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/province/limpopo</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/province/mpumalanga</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/province/north-west</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/province/free-state</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/province/northern-cape</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Blog & Articles -->
+    <url>
+        <loc>https://goexploresa.co.za/blog</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/blog/travel-guides</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/blog/business-tips</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/blog/job-advice</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/blog/local-events</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Dynamic Content Endpoints (For Search Engines) -->
+    <url>
+        <loc>https://goexploresa.co.za/api/sitemap/businesses.xml</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/api/sitemap/jobs.xml</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/api/sitemap/accommodation.xml</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://goexploresa.co.za/api/sitemap/professionals.xml</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+</urlset>

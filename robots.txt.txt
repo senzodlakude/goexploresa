@@ -1,0 +1,4 @@
+User-agent: *
+Sitemap: https://goexploresa.co.za/sitemap.xml
+Sitemap: https://goexploresa.co.za/api/sitemap/businesses.xml
+Sitemap: https://goexploresa.co.za/api/sitemap/jobs.xml
